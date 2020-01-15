@@ -1,0 +1,77 @@
+/* Resetting dimensions of full page  */
+
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+/* Setting dimensions and spacing of full container */
+.grocery-list {
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+}
+
+header {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: Arial;
+    color: #2C3A47;
+    margin-top: 30px;
+}
+
+/* Putting each grocery item in a grid layout  */
+.grocery-list-items {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 60px;
+}
+
+/* Each text component is displayed using flexbox.  The spacing  is managed via justify-content 
+and flex-direction allows for easier positioning in specific cases  */
+.box {
+    background-color: #FFF4D5;
+    border-bottom: 5px solid #e17055;
+    border-right: 5px solid #e17055;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 10px;
+    height: 200px;
+}
+
+/* Aligned quantity at the end  */
+.item-quantity {
+    align-self: flex-end;
+}
+
+.item-name {
+    border-bottom: 2px solid #b3b3b3;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.item-information {
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.item-name, .item-information {
+    color: #2C3A47;
+}
+
+.item-quantity, .item-type {
+    color: #e17055;
+    font-weight: bold;
+}
+
+/* Created media query to make items more responsive on smaller screens.  Switching grid columns to auto makes each unit block-level. */
+@media (max-width: 767px) and (min-width: 320px) {
+    .grocery-list-items {
+        grid-template-columns: auto;
+    }
+}​
